@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>108 – A rádio flashback</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Baloo+2:wght@500;700;800&display=swap">
+<style>
+:root{
+  --bg1:#ff8fd8; --bg2:#b66bf0; --bg3:#5a1d9c;
+  --pink:#ff2fa8; --hot:#d4108c; --lilac:#e9c9ff; --purple:#7a2fc0; --deep:#2d0a52; --white:#fff;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Baloo 2","Trebuchet MS","Comic Sans MS",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#e56ac3;--bg2:#8f4bd0;--bg3:#3c1070}}
+:root[data-theme="dark"]{--bg1:#e56ac3;--bg2:#8f4bd0;--bg3:#3c1070}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;font-family:var(--body);font-weight:500;color:var(--deep);line-height:1.4;min-height:100vh;
+  background:radial-gradient(circle,rgba(255,255,255,.35) 2px,transparent 2.5px) 0 0/26px 26px,linear-gradient(180deg,var(--bg1),var(--bg2) 55%,var(--bg3));background-attachment:fixed}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--white);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+
+.glass{position:relative;border:5px solid var(--white);border-radius:34px;overflow:hidden;
+  background:linear-gradient(180deg,#fff 0,var(--lilac) 38%,#d49af5 100%);
+  box-shadow:0 0 0 5px var(--purple),0 0 0 8px var(--pink),0 14px 0 8px var(--deep)}
+.glass::before{content:"";position:absolute;left:0;right:0;top:0;height:46%;background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.05));pointer-events:none}
+.glass>*{position:relative}
+
+.top{text-align:center;padding:26px 16px 0}
+.orb{display:grid;place-items:center;width:170px;height:170px;margin:0 auto;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,#fff 0 8%,#ffb3ea 9%,var(--pink) 45%,var(--purple) 100%);
+  border:6px solid var(--white);box-shadow:0 0 0 6px var(--purple),0 10px 0 6px var(--deep),inset -10px -14px 24px rgba(60,0,100,.45);position:relative}
+.orb b{display:block;font:400 3.4rem/1 var(--display);color:var(--white);-webkit-text-stroke:3px var(--deep);paint-order:stroke fill;text-shadow:4px 4px 0 var(--deep)}
+.orb i{position:absolute;left:-14px;right:-14px;top:62%;height:30px;background:linear-gradient(var(--white),var(--lilac));border:3px solid var(--purple);border-radius:8px;transform:rotate(-6deg);display:grid;place-items:center;font:400 .95rem var(--display);color:var(--hot);font-style:normal}
+.orb em{position:absolute;top:-8px;right:6px;font-size:2rem;font-style:normal;color:var(--white);text-shadow:0 0 8px var(--pink);animation:tw 2.2s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.35) rotate(20deg);opacity:.6}}
+h1{margin:22px 0 6px;font:400 clamp(1.6rem,6vw,2.6rem)/1.05 var(--display);color:var(--hot);-webkit-text-stroke:2px var(--white);paint-order:stroke fill;text-shadow:3px 3px 0 var(--purple)}
+.top p{margin:0 auto;max-width:36ch;font-weight:700}
+
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 16px 22px}
+.tab{display:grid;place-items:center;min-height:56px;padding:8px;border:3px solid var(--white);border-radius:16px 16px 22px 22px;
+  background:linear-gradient(var(--pink) 0 50%,var(--hot) 50%);color:var(--white);
+  font:400 clamp(.9rem,3.2vw,1.35rem)/1 var(--display);text-decoration:none;text-align:center;-webkit-text-stroke:1.5px var(--deep);paint-order:stroke fill;
+  box-shadow:0 5px 0 var(--deep);transition:transform .12s}
+.tab:hover{transform:translateY(-3px)}
+.tab:active{transform:translateY(3px);box-shadow:0 2px 0 var(--deep)}
+
+main{display:grid;grid-template-columns:repeat(12,1fr);gap:26px;margin-top:34px}
+.live{grid-column:span 12}
+.played{grid-column:span 7}
+.contact{grid-column:span 5}
+.panel{padding:22px 20px}
+.panel h2{margin:0 0 12px;font:400 clamp(1.5rem,5vw,2.1rem)/1.05 var(--display);color:var(--hot);-webkit-text-stroke:2px var(--white);paint-order:stroke fill;text-shadow:3px 3px 0 var(--purple)}
+
+.screen{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px;border:4px solid var(--purple);border-radius:20px;background:linear-gradient(#2d0a52,#4b1487);color:var(--white);box-shadow:inset 0 0 0 3px var(--pink)}
+.play{flex:none;width:84px;height:84px;border-radius:50%;border:5px solid var(--white);background:radial-gradient(circle at 35% 30%,#ffd1f1,var(--pink) 55%,var(--hot));color:var(--white);font-size:2rem;cursor:pointer;box-shadow:0 6px 0 var(--deep)}
+.play:active{transform:translateY(4px);box-shadow:0 2px 0 var(--deep)}
+.now{flex:1 1 220px;min-width:0}
+.now small{display:inline-block;padding:2px 12px;border-radius:999px;background:var(--pink);font-weight:800}
+.now b{display:block;margin:6px 0 0;font:400 clamp(1.1rem,4vw,1.6rem)/1.15 var(--display);overflow-wrap:anywhere}
+.cover{flex:none;width:84px;height:84px;border-radius:14px;border:4px solid var(--white);background:linear-gradient(135deg,#3a0d63,#7a2fc0);display:grid;place-items:center;overflow:hidden;box-shadow:0 4px 0 var(--deep)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover span{font-size:1.8rem;color:var(--lilac)}
+.bars{display:flex;align-items:flex-end;gap:5px;height:36px;margin-top:10px}
+.bars i{width:10px;height:8px;border-radius:5px;background:var(--pink)}
+.bars i:nth-child(2n){background:var(--lilac)}
+.playing .bars i{animation:eq .8s ease-in-out infinite alternate}
+.bars i:nth-child(2n){animation-duration:.55s}
+.bars i:nth-child(3n){animation-duration:1.05s}
+@keyframes eq{to{height:36px}}
+.vol{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:800}
+.vol input{flex:1;accent-color:var(--hot)}
+.msg{margin:12px 0 0;font-weight:700;min-height:1.4em}
+
+/* Já tocou — SÓ 5 */
+#history{margin:0;padding:0;list-style:none}
+#history li{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:center;padding:9px 0;border-bottom:3px dotted var(--purple);font-weight:800;overflow-wrap:anywhere}
+#history li:last-child{border:0}
+#history time{padding:3px 0;border:2px solid var(--white);border-radius:10px;background:var(--pink);color:var(--white);font:400 .9rem var(--display);text-align:center}
+.empty{font-weight:700}
+.more{display:inline-block;margin-top:12px;padding:8px 18px;border:3px solid var(--white);border-radius:999px;background:var(--purple);color:var(--white);font-weight:800;text-decoration:none;box-shadow:0 4px 0 var(--deep);cursor:pointer;font-family:var(--body);font-size:1rem}
+.more:hover{background:var(--hot)}
+
+/* Top 5 — SÓ 5 */
+#toplist{list-style:none;margin:0;padding:0;counter-reset:top}
+#toplist li{counter-increment:top;display:grid;grid-template-columns:34px 52px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:3px dotted var(--purple);font-weight:800;overflow-wrap:anywhere}
+#toplist li:last-child{border:0}
+#toplist li::before{content:counter(top);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--pink);color:var(--white);font:400 .95rem var(--display);border:2px solid var(--white)}
+#toplist img{width:52px;height:52px;border-radius:10px;border:3px solid var(--white);object-fit:cover;box-shadow:0 3px 0 var(--deep);background:var(--purple)}
+#toplist .tn{min-width:0}
+#toplist .tn .tname{display:block;font-weight:800}
+#toplist .chg{display:inline-block;margin-top:4px;font:400 .75rem var(--display);padding:1px 8px;border-radius:999px;background:var(--white);color:var(--hot);border:2px solid var(--purple)}
+#toplist .chg.up{color:#0a7a3d}
+#toplist .chg.down{color:#b0003a}
+#toplist li.loading{display:block;font-weight:700;opacity:.75}
+#toplist li.loading::before{display:none}
+
+.sticker{position:absolute;right:-6px;top:-6px;display:grid;place-items:center;width:78px;height:78px;border:3px dotted var(--deep);border-radius:50%;background:var(--white);color:var(--hot);font:400 .85rem/1.1 var(--display);text-align:center;transform:rotate(14deg)}
+
+footer{padding:34px 0 20px;text-align:center}
+footer p{margin:0 0 12px;font:400 1.5rem var(--display);color:var(--white);-webkit-text-stroke:2px var(--deep);paint-order:stroke fill}
+.social{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.social a{padding:10px 20px;border:4px solid var(--white);border-radius:999px;background:var(--hot);color:var(--white);font-weight:800;text-decoration:none;box-shadow:0 5px 0 var(--deep)}
+.social a:hover{background:var(--white);color:var(--hot)}
+
+/* ---------- Vista do histórico completo (overlay interno) ---------- */
+.overlay{position:fixed;inset:0;z-index:100;display:none;
+  background:radial-gradient(circle,rgba(255,255,255,.35) 2px,transparent 2.5px) 0 0/26px 26px,linear-gradient(180deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  overflow-y:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.overlay.open{display:block}
+.overlay .sheet{max-width:820px;margin:0 auto}
+
+/* Botão de fechar no topo do overlay */
+.close-top{position:sticky;top:calc(8px + env(safe-area-inset-top,0px));z-index:5;display:flex;justify-content:flex-end;margin:0 0 10px;pointer-events:none}
+.close-top button{pointer-events:auto;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;
+  border:4px solid var(--white);background:var(--hot);color:var(--white);font-size:1.6rem;font-weight:800;line-height:1;
+  cursor:pointer;box-shadow:0 5px 0 var(--deep);transition:transform .12s,background .15s}
+.close-top button:hover{background:var(--white);color:var(--hot)}
+.close-top button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--deep)}
+
+.overlay .head{text-align:center;padding:22px 18px 8px}
+.overlay .head h2{margin:0 0 6px;font:400 clamp(1.5rem,6vw,2.4rem)/1.05 var(--display);color:var(--hot);-webkit-text-stroke:2px var(--white);paint-order:stroke fill;text-shadow:3px 3px 0 var(--purple)}
+.overlay .head p{margin:0;font-weight:700}
+.overlay .panel{padding:20px}
+.overlay .list-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.overlay .list-title h3{margin:0;font:400 clamp(1.2rem,4.5vw,1.7rem)/1.05 var(--display);color:var(--hot);-webkit-text-stroke:2px var(--white);paint-order:stroke fill;text-shadow:2px 2px 0 var(--purple)}
+.overlay .list-title small{font-weight:800;padding:3px 12px;border-radius:999px;background:var(--pink);color:var(--white)}
+
+#full{margin:0;padding:0;list-style:none;counter-reset:n}
+#full li{counter-increment:n;display:grid;grid-template-columns:34px 62px 1fr;gap:12px;align-items:center;padding:10px 0;border-bottom:3px dotted var(--purple);font-weight:800;overflow-wrap:anywhere}
+#full li:last-child{border:0}
+#full li::before{content:counter(n);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--purple);color:var(--white);font:400 .9rem var(--display);border:2px solid var(--white)}
+#full time{padding:3px 0;border:2px solid var(--white);border-radius:10px;background:var(--pink);color:var(--white);font:400 .9rem var(--display);text-align:center}
+#full .song{min-width:0}
+#full .song b{display:block;font-weight:800}
+#full .song small{display:block;font-weight:700;opacity:.75;margin-top:2px}
+.state{margin:14px 0 0;font-weight:700}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+.actions .btn{display:inline-block;padding:9px 20px;border:3px solid var(--white);border-radius:999px;background:var(--hot);color:var(--white);font-weight:800;text-decoration:none;box-shadow:0 4px 0 var(--deep);cursor:pointer;font-family:var(--body);font-size:1rem}
+.actions .btn.alt{background:var(--purple)}
+.actions .btn:hover{background:var(--white);color:var(--hot)}
+body.locked{overflow:hidden}
+
+@media (max-width:760px){.played,.contact{grid-column:span 12}.orb{width:150px;height:150px}.orb b{font-size:3rem}}
+@media (max-width:520px){#full li{grid-template-columns:28px 56px 1fr;gap:9px}#full time{font-size:.8rem}#full li::before{width:26px;height:26px}}
+@media (prefers-reduced-motion:reduce){.orb em{animation:none}.playing .bars i{animation:none;height:22px}.tab{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="glass">
+    <div class="top">
+      <div class="orb" aria-hidden="true"><b>108</b><i>Rádio Flashback</i><em>✦</em></div>
+      <h1>108% Nostalgia</h1>
+      <p>Ouve e leva a 108 para onde estiveres.</p>
+    </div>
+    <nav class="tabs" aria-label="Ações principais">
+      <a class="tab" href="#direto">Em direto</a>
+      <a class="tab" href="#tocou">Já tocou</a>
+      <a class="tab" href="#contactos">Top 5</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="glass panel live" id="direto" aria-label="Em direto">
+      <h2>Em direto</h2>
+      <div class="screen" id="player">
+        <button class="play" id="play" aria-label="Ouvir em direto" aria-pressed="false">▶</button>
+        <div class="cover" id="cover" aria-hidden="true"><span>♪</span></div>
+        <div class="now">
+          <small>A tocar agora</small>
+          <b id="title">108 FM</b>
+          <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <label class="vol">Volume <input type="range" id="vol" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+      <p class="msg" id="msg" role="status"></p>
+      <audio id="audio" preload="none" src="https://stream.zeno.fm/vpzrr5p1rpguv"></audio>
+    </section>
+
+    <section class="glass panel played" id="tocou" aria-label="Já tocou">
+      <h2>Já tocou</h2>
+      <ol id="history"></ol>
+      <p class="empty" id="empty">As músicas aparecem aqui à medida que passam no ar.</p>
+      <button type="button" class="more" id="openFull">Ver histórico completo</button>
+    </section>
+
+    <section class="glass panel contact" id="contactos" aria-label="Top das mais tocadas">
+      <span class="sticker">top 5</span>
+      <h2>Mais tocadas</h2>
+      <ol id="toplist"><li class="loading">A carregar o top…</li></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>108© Todos os direitos reservados</p>
+  </footer>
+</div>
+
+<!-- Vista interna do histórico completo (mantém o player a tocar) -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="fullTitle" aria-hidden="true">
+  <div class="sheet">
+    <div class="close-top">
+      <button type="button" id="closeTop" aria-label="Fechar histórico">✕</button>
+    </div>
+    <div class="glass">
+      <div class="head">
+        <h2 id="fullTitle">Histórico completo</h2>
+        <p>As últimas 30 músicas que passaram na 108 FM.</p>
+      </div>
+      <section class="panel" aria-label="Últimas 30 músicas">
+        <div class="list-title">
+          <h3>Já tocou</h3>
+          <small id="count">30 músicas</small>
+        </div>
+        <ol id="full"></ol>
+        <p class="state" id="state" role="status">A carregar o histórico…</p>
+        <div class="actions">
+          <button type="button" class="btn" id="closeFull">Fechar</button>
+          <button type="button" class="btn alt" id="reloadFull">Atualizar</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STREAM='https://stream.zeno.fm/vpzrr5p1rpguv';
+  var META='https://api.zeno.fm/mounts/metadata/subscribe/vpzrr5p1rpguv';
+  var NOW_API='https://scraper.onlineradiobox.com/pt.108fm/';
+  var HISTORY_API='https://onlineradiobox.com/json/pt/108fm/playlist/0';
+  var TOP_API='https://onlineradiobox.com/json/pt/108fm/top?size=10';
+  var LIMIT=5;
+  var FULL_LIMIT=30;
+
+  var $=function(i){return document.getElementById(i)};
+  var audio=$('audio'),btn=$('play'),box=$('player'),msg=$('msg'),title=$('title'),list=$('history'),empty=$('empty');
+  var cover=$('cover'),topList=$('toplist');
+  var history=[],current='';
+  var lastCoverFor='';
+
+  try{var saved=JSON.parse(localStorage.getItem('fm108-history')||'[]');if(Array.isArray(saved))history=saved.slice(0,LIMIT)}catch(e){}
+
+  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
+  function render(){
+    list.innerHTML=history.slice(0,LIMIT).map(function(h){return '<li><time>'+esc(h.t)+'</time><span>'+esc(h.s)+'</span></li>'}).join('');
+    empty.style.display=history.length?'none':'block';
+  }
+  function hhmm(ts){
+    var d=ts?new Date(ts*1000):new Date();
+    return ('0'+d.getHours()).slice(-2)+'h'+('0'+d.getMinutes()).slice(-2);
+  }
+  function setTrack(s){
+    s=(s||'').trim();
+    if(!s||s===current)return;
+    if(current){history.unshift({t:hhmm(),s:current});history=history.slice(0,LIMIT);
+      try{localStorage.setItem('fm108-history',JSON.stringify(history))}catch(e){}}
+    current=s;title.textContent=s;render();
+    updateCover(s);
+  }
+
+  function setCover(url){
+    cover.innerHTML='';
+    if(url){
+      var img=document.createElement('img');
+      img.src=url;img.alt='';img.loading='lazy';
+      img.onerror=function(){cover.innerHTML='<span>♪</span>'};
+      cover.appendChild(img);
+    }else{
+      cover.innerHTML='<span>♪</span>';
+    }
+  }
+  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim()}
+  function updateCover(trackName){
+    lastCoverFor=trackName;
+    fetch(NOW_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+      if(lastCoverFor!==trackName)return;
+      if(d && d.iImg){setCover(d.iImg);return}
+      return fetch(TOP_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(t){
+        if(lastCoverFor!==trackName)return;
+        var found=null,nt=norm(trackName);
+        (t.top||[]).forEach(function(it){
+          if(!found && it.img && norm(it.name)===nt)found=it.img;
+        });
+        setCover(found);
+      });
+    }).catch(function(){
+      fetch(TOP_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(t){
+        if(lastCoverFor!==trackName)return;
+        var found=null,nt=norm(trackName);
+        (t.top||[]).forEach(function(it){
+          if(!found && it.img && norm(it.name)===nt)found=it.img;
+        });
+        setCover(found);
+      }).catch(function(){setCover(null)});
+    });
+  }
+  updateCover('108 FM');
+
+  function loadHistory(){
+    fetch(HISTORY_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+      var pl=(d && d.playlist) || [];
+      if(!pl.length)return;
+      history=pl.slice(0,LIMIT).map(function(it){
+        return {t:hhmm(it.created), s:it.name};
+      });
+      try{localStorage.setItem('fm108-history',JSON.stringify(history))}catch(e){}
+      render();
+    }).catch(function(){});
+  }
+  loadHistory();
+  setInterval(loadHistory,60000);
+
+  function renderTop(items){
+    if(!items || !items.length){topList.innerHTML='<li class="loading">Top indisponível.</li>';return}
+    topList.innerHTML=items.slice(0,LIMIT).map(function(it){
+      var img=it.img
+        ? '<img src="'+esc(it.img)+'" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'">'
+        : '<span></span>';
+      var chg='';
+      if(typeof it.change==='number'){
+        var cls=it.change>0?'up':(it.change<0?'down':'');
+        var txt=it.change>0?'▲ +'+it.change:(it.change<0?'▼ '+it.change:'—');
+        chg='<span class="chg '+cls+'">'+esc(txt)+'</span>';
+      }
+      return '<li>'+img+'<span class="tn"><span class="tname">'+esc(it.name)+'</span>'+chg+'</span></li>';
+    }).join('');
+  }
+  function loadTop(){
+    fetch(TOP_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+      renderTop(d && d.top);
+    }).catch(function(){renderTop(null)});
+  }
+  loadTop();
+  setInterval(loadTop,120000);
+
+  /* ---------- Histórico completo (overlay interno, 30 músicas) ---------- */
+  var overlay=$('overlay'),openFull=$('openFull'),closeFull=$('closeFull'),closeTop=$('closeTop'),reloadFull=$('reloadFull');
+  var full=$('full'),state=$('state'),count=$('count');
+  var lastFocus=null;
+
+  function splitSong(name){
+    var s=(name||'').trim();
+    var i=s.indexOf(' - ');
+    if(i>0) return {artist:s.slice(0,i), title:s.slice(i+3)};
+    return {artist:'', title:s};
+  }
+  function fmtDate(ts){
+    var d=ts?new Date(ts*1000):new Date();
+    return ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2);
+  }
+  function renderFull(items){
+    if(!items || !items.length){
+      full.innerHTML='';
+      state.innerHTML='Ainda não há músicas disponíveis. <button type="button" class="btn" id="retryFull">Tentar de novo</button>';
+      count.textContent='0 músicas';
+      var rf=$('retryFull');
+      if(rf) rf.addEventListener('click',loadFull);
+      return;
+    }
+    var arr=items.slice(0,FULL_LIMIT);
+    count.textContent=arr.length+' música'+(arr.length===1?'':'s');
+    full.innerHTML=arr.map(function(it){
+      var p=splitSong(it.name);
+      var sub=p.artist?'<small>'+esc(p.artist)+'</small>':'';
+      return '<li><time title="'+esc(fmtDate(it.created))+'">'+esc(hhmm(it.created))+'</time>'
+           + '<span class="song"><b>'+esc(p.title)+'</b>'+sub+'</span></li>';
+    }).join('');
+    state.textContent='';
+  }
+  function loadFull(){
+    state.textContent='A carregar o histórico…';
+    fetch(HISTORY_API,{cache:'no-store'}).then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json();
+    }).then(function(d){
+      var pl=(d && d.playlist) || [];
+      if(pl.length){renderFull(pl);return}
+      throw new Error('empty');
+    }).catch(function(){
+      fetch(TOP_API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+        var top=(d && d.top) || [];
+        renderFull(top.map(function(it){return {name:it.name, created:Math.floor(Date.now()/1000)}}));
+        if(top.length) state.textContent='Mostrando o top atual (histórico indisponível de momento).';
+      }).catch(function(){renderFull([])});
+    });
+  }
+  function openOverlay(){
+    lastFocus=document.activeElement;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.classList.add('locked');
+    loadFull();
+    closeTop.focus();
+  }
+  function closeOverlay(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.classList.remove('locked');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  openFull.addEventListener('click',openOverlay);
+  closeFull.addEventListener('click',closeOverlay);
+  closeTop.addEventListener('click',closeOverlay);
+  reloadFull.addEventListener('click',loadFull);
+  overlay.addEventListener('click',function(e){ if(e.target===overlay) closeOverlay(); });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && overlay.classList.contains('open')) closeOverlay();
+  });
+
+  setInterval(function(){ if(overlay.classList.contains('open')) loadFull(); },60000);
+
+  /* ---------- Player ---------- */
+  btn.addEventListener('click',function(){
+    if(audio.paused){
+      msg.textContent='A ligar…';
+      audio.play().catch(function(){fail()});
+    }else{audio.pause()}
+  });
+  audio.addEventListener('playing',function(){box.classList.add('playing');btn.textContent='❚❚';btn.setAttribute('aria-pressed','true');btn.setAttribute('aria-label','Pausar');msg.textContent=''});
+  audio.addEventListener('pause',function(){box.classList.remove('playing');btn.textContent='▶';btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label','Ouvir em direto')});
+  audio.addEventListener('error',fail);
+  function fail(){msg.innerHTML='Não foi possível tocar aqui. <a href="'+STREAM+'" target="_blank" rel="noopener">Abrir o stream</a> noutro separador.'}
+  $('vol').addEventListener('input',function(e){audio.volume=+e.target.value});
+  audio.volume=0.8;
+
+  try{
+    var es=new EventSource(META);
+    es.onmessage=function(ev){
+      try{var d=JSON.parse(ev.data);setTrack(d.streamTitle||d.title||'')}catch(e){}
+    };
+    es.onerror=function(){es.close()};
+  }catch(e){}
+  render();
+})();
+</script>
+</body>
+</html>
